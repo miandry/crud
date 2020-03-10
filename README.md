@@ -1,6 +1,16 @@
 # Drupal 8 CRUD 
 Simple way to create , update entity . The module can support following field types : paragraph,text 
 
+#1 example 
+```php
+$fields =['name'=>'john','pass'=>'12345','mail'=>'john@yahoo.fr']
+\Drupal::service('crud')->save('user', 'user', $fields);
+```
+#2 example 
+```php
+\Drupal::service('crud')->save('taxonomy_term', 'tags',['sport','education']);
+```
+#Full example
 ```php
 
     $fields =  [
