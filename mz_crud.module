@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Contains mz_crud.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+/**
+ * Implements hook_help().
+ */
+function mz_crud_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the mz_crud module.
+    case 'help.page.mz_crud':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('CRUD entity api') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function mz_crud_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+     if($form_id =='devel_execute_form'){
+         $node = \Drupal::entityTypeManager()->getStorage("node")->load(39);
+         $array = \Drupal::service('entity_parser.manager')->parser($node);
+         kint($array);
+//         $fields =[
+//              'title'=>'2222222 Product CRUD 2342',
+//              'media_image' => [
+//                  'https://images.meyerhatchery.com/ProductImages/JGPS3001.gif'
+//              ],
+//               'product_category'=> 'txt qww'
+//         ];
+//         \Drupal::service('crud')->save('node','product',$fields);
+     }
+}
+

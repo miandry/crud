@@ -1,0 +1,7 @@
+mz_crud.mz_crud_form_menu:
+  title: 'Import Entity Json'
+  route_name: mz_crud.mz_crud_form
+  description: ''
+  parent: system.admin_config_system
+  weight: 99
+

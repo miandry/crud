@@ -1,0 +1,11 @@
+
+mz_crud.mz_crud_form:
+  path: '/admin/mz_crud'
+  defaults:
+    _form: '\Drupal\mz_crud\Form\CRUDForm'
+    _title: 'Import Entity By JSON'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

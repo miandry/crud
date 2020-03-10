@@ -1,0 +1,5 @@
+name: 'mz_crud'
+type: module
+description: 'CRUD entity api'
+core: 8.x
+package: 'Custom'
